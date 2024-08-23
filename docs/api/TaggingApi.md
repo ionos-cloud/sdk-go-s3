@@ -377,7 +377,7 @@ import (
 
 func main() {
     bucket := "bucket_example" // string | 
-    putBucketTaggingRequest := *openapiclient.NewPutBucketTaggingRequest(*openapiclient.NewPutBucketTaggingRequestTagging()) // PutBucketTaggingRequest | 
+    putBucketTaggingRequest := *openapiclient.NewPutBucketTaggingRequest() // PutBucketTaggingRequest | 
     contentMD5 := "contentMD5_example" // string |  (optional)
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
@@ -465,7 +465,7 @@ import (
 func main() {
     bucket := "bucket_example" // string | 
     key := "key_example" // string | Name of the object key.
-    putObjectTaggingRequest := *openapiclient.NewPutObjectTaggingRequest(*openapiclient.NewPutObjectTaggingRequestTagging()) // PutObjectTaggingRequest | 
+    putObjectTaggingRequest := *openapiclient.NewPutObjectTaggingRequest() // PutObjectTaggingRequest | 
     versionId := "versionId_example" // string | The versionId of the object that the tag-set will be added to. (optional)
     contentMD5 := "contentMD5_example" // string |  (optional)
 

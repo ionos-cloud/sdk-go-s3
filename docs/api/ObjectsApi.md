@@ -47,6 +47,7 @@ var result CopyObjectResult = CopyObject(ctx, bucket, key)
                       .XAmzObjectLockMode(xAmzObjectLockMode)
                       .XAmzObjectLockRetainUntilDate(xAmzObjectLockRetainUntilDate)
                       .XAmzObjectLockLegalHold(xAmzObjectLockLegalHold)
+                      .XAmzMeta(xAmzMeta)
                       .CopyObjectRequest(copyObjectRequest)
                       .Execute()
 ```
@@ -97,11 +98,12 @@ func main() {
     xAmzObjectLockMode := "xAmzObjectLockMode_example" // string | The Object Lock mode that you want to apply to the copied object. (optional)
     xAmzObjectLockRetainUntilDate := time.Now() // time.Time | The date and time when you want the copied object's Object Lock to expire. (optional)
     xAmzObjectLockLegalHold := "xAmzObjectLockLegalHold_example" // string | Specifies whether you want to apply a Legal Hold to the copied object. (optional)
+    xAmzMeta := map[string]string{"key": "Inner_example"} // map[string]string | A map of metadata to store with the object in S3. (optional)
     copyObjectRequest := *openapiclient.NewCopyObjectRequest() // CopyObjectRequest |  (optional)
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
-    resource, resp, err := apiClient.ObjectsApi.CopyObject(context.Background(), bucket, key).XAmzCopySource(xAmzCopySource).CacheControl(cacheControl).ContentDisposition(contentDisposition).ContentEncoding(contentEncoding).ContentLanguage(contentLanguage).ContentType(contentType).XAmzCopySourceIfMatch(xAmzCopySourceIfMatch).XAmzCopySourceIfModifiedSince(xAmzCopySourceIfModifiedSince).XAmzCopySourceIfNoneMatch(xAmzCopySourceIfNoneMatch).XAmzCopySourceIfUnmodifiedSince(xAmzCopySourceIfUnmodifiedSince).Expires(expires).XAmzMetadataDirective(xAmzMetadataDirective).XAmzTaggingDirective(xAmzTaggingDirective).XAmzServerSideEncryption(xAmzServerSideEncryption).XAmzStorageClass(xAmzStorageClass).XAmzWebsiteRedirectLocation(xAmzWebsiteRedirectLocation).XAmzServerSideEncryptionCustomerAlgorithm(xAmzServerSideEncryptionCustomerAlgorithm).XAmzServerSideEncryptionCustomerKey(xAmzServerSideEncryptionCustomerKey).XAmzServerSideEncryptionCustomerKeyMD5(xAmzServerSideEncryptionCustomerKeyMD5).XAmzCopySourceServerSideEncryptionCustomerAlgorithm(xAmzCopySourceServerSideEncryptionCustomerAlgorithm).XAmzCopySourceServerSideEncryptionCustomerKey(xAmzCopySourceServerSideEncryptionCustomerKey).XAmzCopySourceServerSideEncryptionCustomerKeyMD5(xAmzCopySourceServerSideEncryptionCustomerKeyMD5).XAmzTagging(xAmzTagging).XAmzObjectLockMode(xAmzObjectLockMode).XAmzObjectLockRetainUntilDate(xAmzObjectLockRetainUntilDate).XAmzObjectLockLegalHold(xAmzObjectLockLegalHold).CopyObjectRequest(copyObjectRequest).Execute()
+    resource, resp, err := apiClient.ObjectsApi.CopyObject(context.Background(), bucket, key).XAmzCopySource(xAmzCopySource).CacheControl(cacheControl).ContentDisposition(contentDisposition).ContentEncoding(contentEncoding).ContentLanguage(contentLanguage).ContentType(contentType).XAmzCopySourceIfMatch(xAmzCopySourceIfMatch).XAmzCopySourceIfModifiedSince(xAmzCopySourceIfModifiedSince).XAmzCopySourceIfNoneMatch(xAmzCopySourceIfNoneMatch).XAmzCopySourceIfUnmodifiedSince(xAmzCopySourceIfUnmodifiedSince).Expires(expires).XAmzMetadataDirective(xAmzMetadataDirective).XAmzTaggingDirective(xAmzTaggingDirective).XAmzServerSideEncryption(xAmzServerSideEncryption).XAmzStorageClass(xAmzStorageClass).XAmzWebsiteRedirectLocation(xAmzWebsiteRedirectLocation).XAmzServerSideEncryptionCustomerAlgorithm(xAmzServerSideEncryptionCustomerAlgorithm).XAmzServerSideEncryptionCustomerKey(xAmzServerSideEncryptionCustomerKey).XAmzServerSideEncryptionCustomerKeyMD5(xAmzServerSideEncryptionCustomerKeyMD5).XAmzCopySourceServerSideEncryptionCustomerAlgorithm(xAmzCopySourceServerSideEncryptionCustomerAlgorithm).XAmzCopySourceServerSideEncryptionCustomerKey(xAmzCopySourceServerSideEncryptionCustomerKey).XAmzCopySourceServerSideEncryptionCustomerKeyMD5(xAmzCopySourceServerSideEncryptionCustomerKeyMD5).XAmzTagging(xAmzTagging).XAmzObjectLockMode(xAmzObjectLockMode).XAmzObjectLockRetainUntilDate(xAmzObjectLockRetainUntilDate).XAmzObjectLockLegalHold(xAmzObjectLockLegalHold).XAmzMeta(xAmzMeta).CopyObjectRequest(copyObjectRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectsApi.CopyObject``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
@@ -153,6 +155,7 @@ Other parameters are passed through a pointer to an apiCopyObjectRequest struct 
 | **xAmzObjectLockMode** | **string** | The Object Lock mode that you want to apply to the copied object. | |
 | **xAmzObjectLockRetainUntilDate** | **time.Time** | The date and time when you want the copied object&#39;s Object Lock to expire. | |
 | **xAmzObjectLockLegalHold** | **string** | Specifies whether you want to apply a Legal Hold to the copied object. | |
+| **xAmzMeta** | [**map[string]string**](../models/string.md) | A map of metadata to store with the object in S3. | |
 | **copyObjectRequest** | [**CopyObjectRequest**](../models/CopyObjectRequest.md) |  | |
 
 ### Return type

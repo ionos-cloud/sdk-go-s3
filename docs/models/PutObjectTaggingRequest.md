@@ -4,13 +4,13 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-|**Tagging** | [**PutObjectTaggingRequestTagging**](PutObjectTaggingRequestTagging.md) |  | |
+|**TagSet** | Pointer to [**[]Tag**](Tag.md) | Contains the tag set. | [optional] |
 
 ## Methods
 
 ### NewPutObjectTaggingRequest
 
-`func NewPutObjectTaggingRequest(tagging PutObjectTaggingRequestTagging, ) *PutObjectTaggingRequest`
+`func NewPutObjectTaggingRequest() *PutObjectTaggingRequest`
 
 NewPutObjectTaggingRequest instantiates a new PutObjectTaggingRequest object
 This constructor will assign default values to properties that have it defined,
@@ -25,24 +25,29 @@ NewPutObjectTaggingRequestWithDefaults instantiates a new PutObjectTaggingReques
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTagging
+### GetTagSet
 
-`func (o *PutObjectTaggingRequest) GetTagging() PutObjectTaggingRequestTagging`
+`func (o *PutObjectTaggingRequest) GetTagSet() []Tag`
 
-GetTagging returns the Tagging field if non-nil, zero value otherwise.
+GetTagSet returns the TagSet field if non-nil, zero value otherwise.
 
-### GetTaggingOk
+### GetTagSetOk
 
-`func (o *PutObjectTaggingRequest) GetTaggingOk() (*PutObjectTaggingRequestTagging, bool)`
+`func (o *PutObjectTaggingRequest) GetTagSetOk() (*[]Tag, bool)`
 
-GetTaggingOk returns a tuple with the Tagging field if it's non-nil, zero value otherwise
+GetTagSetOk returns a tuple with the TagSet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTagging
+### SetTagSet
 
-`func (o *PutObjectTaggingRequest) SetTagging(v PutObjectTaggingRequestTagging)`
+`func (o *PutObjectTaggingRequest) SetTagSet(v []Tag)`
 
-SetTagging sets Tagging field to given value.
+SetTagSet sets TagSet field to given value.
 
+### HasTagSet
+
+`func (o *PutObjectTaggingRequest) HasTagSet() bool`
+
+HasTagSet returns a boolean if a field has been set.
 
 
