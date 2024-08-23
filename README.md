@@ -9,9 +9,7 @@ compatibility with existing tools and libraries tailored for S3 systems.
 - [S3 API Reference for contract-owned buckets](https://api.ionos.com/docs/s3-contract-owned-buckets/v2/)
 ### User documentation
 [IONOS S3 Object Storage User Guide](https://docs.ionos.com/cloud/managed-services/s3-object-storage)
-* [Documentation on user-owned and contract-owned buckets](https://docs.ionos.com/cloud/managed-services/s3-object-storage/concepts/buckets)
 * [Documentation on S3 API Compatibility](https://docs.ionos.com/cloud/managed-services/s3-object-storage/concepts/s3-api-compatibility)
-* [S3 Tools](https://docs.ionos.com/cloud/managed-services/s3-object-storage/s3-tools)
 
 ## Endpoints for contract-owned buckets
 | Location | Region Name | Bucket Type | Endpoint |
@@ -249,29 +247,15 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-
-Authentication schemes defined for the API:
-### hmac
-
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
-
-Note, each API key must be added to a map of `map[string]APIKey` where the key is: Authorization and passed in as the auth context for each request.
-
-Example
-
-```golang
-auth := context.WithValue(
-		context.Background(),
-		sw.ContextAPIKeys,
-		map[string]sw.APIKey{
-			"Authorization": {Key: "API_KEY_STRING"},
-		},
-	)
-r, err := client.Service.Operation(auth, args)
+For authentication you need to set the following environment variables with your credentials
+```bash
+export IONOS_S3_ACCESS_KEY="accesskey"
+export IONOS_S3_SECRET_KEY="secretkey"
 ```
-
+```golang
+cfg := s3.NewConfigurationFromEnv()
+apiClient:=s3.NewApiClient(cfg)
+```
 
 ## Documentation for Utility Methods
 
