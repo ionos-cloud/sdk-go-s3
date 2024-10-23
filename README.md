@@ -1,3 +1,7 @@
+> [!WARNING]
+> There is a new repo https://github.com/ionos-cloud/sdk-go-object-storage replacing this one. Please use that instead.
+
+
 # Go API client for ionoscloud
 
 ## Overview
